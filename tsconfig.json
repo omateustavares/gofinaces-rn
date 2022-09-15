@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "alwaysStrict": true
+    },
+    "extends": "expo/tsconfig.base"
+}
