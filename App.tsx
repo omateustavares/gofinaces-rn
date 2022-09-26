@@ -1,7 +1,8 @@
 import React from "react";
 import AppLoading from "expo-app-loading";
 import { ThemeProvider } from "styled-components";
-import * as SplashScreen from "expo-splash-screen";
+import "intl";
+import "intl/locale-data/jsonp/pt-BR";
 
 import {
   useFonts,
@@ -12,6 +13,11 @@ import {
 
 import { Register } from "./src/screens/Register";
 import theme from "./src/global/styles/theme";
+import { AppRoutes } from "./src/routes/app.routes";
+import {
+  NavigationContainer,
+  NavigationContext,
+} from "@react-navigation/native";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -26,7 +32,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Register />
+      <NavigationContainer>
+        <AppRoutes />
+      </NavigationContainer>
     </ThemeProvider>
   );
 }

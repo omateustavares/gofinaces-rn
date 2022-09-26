@@ -1,4 +1,5 @@
 import { RFValue } from "react-native-responsive-fontsize";
+import { SafeAreaView } from "react-native-safe-area-context";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
@@ -39,4 +40,9 @@ export const TransactionsTypes = styled.View`
 
   margin-top: 8px;
   margin-bottom: 16px;
+`;
+
+export const CatainerSafeAreaView = styled(SafeAreaView)`
+  flex: 1;
+  /* background-color: transparent; */
 `;
