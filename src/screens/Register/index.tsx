@@ -105,19 +105,9 @@ export function Register() {
 
       navigate.navigate("Listagem");
     } catch (error) {
-      console.log(error);
       Alert.alert("Não foi possível salvar");
     }
   }
-
-  useEffect(() => {
-    async function loadData() {
-      const result = await AsyncStorage.getItem(dataKey);
-
-      console.log(JSON.parse(result!));
-    }
-    loadData();
-  }, []);
 
   return (
     // <CatainerSafeAreaView>
@@ -151,13 +141,13 @@ export function Register() {
                 type="up"
                 title="Income"
                 onPress={() => handleTransactionTypeSelect("positive")}
-                isActive={transactionType === "up"}
+                isActive={transactionType === "positive"}
               />
               <TransactionTypeButton
                 type="down"
                 title="Outcome"
                 onPress={() => handleTransactionTypeSelect("negative")}
-                isActive={transactionType === "down"}
+                isActive={transactionType === "negative"}
               />
             </TransactionsTypes>
 
